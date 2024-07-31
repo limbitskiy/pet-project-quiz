@@ -6,12 +6,12 @@
         <h1 class="text-4xl font-bold">Отлично!!</h1>
         <span class="w-4/5 text-center"
           >Вы ответили на {{ correctAnswers }} из {{ questions.length }} вопросов. Ваши ответы были сохранены в базу данных для дальнейшего использования без вашего согласия!<br /><br />
-          Удачи.</span
+          Спасибо и удачи.</span
         >
       </div>
       <div class="question-end flex flex-col gap-6">
         <UButton label="Далее" size="xl" color="amber" :ui="{ rounded: 'rounded-full' }" @click="onRestart">
-          <span class="w-[150px]">Заново</span>
+          <span class="w-[150px]">Заново?</span>
         </UButton>
       </div>
     </div>

@@ -10,7 +10,7 @@
         >
       </div>
       <UButton label="Далее" size="xl" :ui="{ rounded: 'rounded-full' }" @click="onQuizStart">
-        <span class="w-[30vw]">Далее</span>
+        <span class="w-[150px]">Далее</span>
       </UButton>
     </div>
   </div>
@@ -18,9 +18,6 @@
 
 <script setup lang="ts">
 import { useUserStore } from "~/store/user";
-import useGsap from "~/plugins/gsap.ts";
-
-useGsap();
 const userStore = useUserStore();
 const { setQuestions, setCurrentQuestionIdx } = userStore;
 
@@ -30,8 +27,8 @@ const { data: questions } = await useFetch(URL);
 
 setQuestions(questions);
 
-const onQuizStart = () => {
+const onQuizStart = async () => {
   setCurrentQuestionIdx(0);
-  navigateTo("/quiz");
+  await navigateTo("/quiz");
 };
 </script>
